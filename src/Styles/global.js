@@ -6,7 +6,7 @@ export const EstiloGlobal = createGlobalStyle`
     --cor-fundo: #121214;
     --cor-fonte: #E1E1E6;
 
-    --cor-de-texto: #FFFFFF;
+    --cor-texto: #FFFFFF;
 
     --cor-botao: #8257E6;
 
@@ -32,12 +32,18 @@ export const EstiloGlobal = createGlobalStyle`
 
 
   body {
-    background: var(--cordefundo);
+    background: var(--cor-fundo);
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, textarea, button {
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6, strong {
+    font-weight: 600;
+    color: var(--cor-fonte);
   }
 
   button {
