@@ -20,7 +20,7 @@ export const Container = styled.div`
     color: var(--cor-fonte);
     font-size: larger;
 
-
+    text-align: left;
 
   }
   
