@@ -4,6 +4,8 @@ export const EstiloGlobal = createGlobalStyle`
 
   :root {
     --cor-fundo: #121214;
+    --cor-fundo-header: #202024;
+    
     --cor-fonte: #E1E1E6;
 
     --cor-texto: #FFFFFF;
