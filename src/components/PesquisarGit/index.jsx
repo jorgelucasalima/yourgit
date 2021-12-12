@@ -15,9 +15,6 @@ export default function PesquisarGit() {
       <button>
         <FaSearch size={20} color="#FFFFFF"/>
       </button>
-
-
-
     </Container>
   )
 }
