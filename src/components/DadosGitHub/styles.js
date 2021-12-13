@@ -10,18 +10,25 @@ export const Container = styled.div`
     
     padding: 40px 170px;
     margin: 30px;
-    align-items: center;
     
-
     background: #202024;
     border-radius: 6px;
     border: none;
 
+  }
+
+  td {
     color: var(--cor-fonte);
     font-size: larger;
+    
 
     text-align: left;
+    justify-content: space-between;
+  }
 
+  tr {
+    color: var(--cor-fonte);
+    font-size: larger;
   }
   
 
