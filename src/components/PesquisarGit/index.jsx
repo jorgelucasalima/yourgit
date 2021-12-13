@@ -12,7 +12,11 @@ export default function PesquisarGit() {
 
   const [seuGit, setSeuGit] = useState('')
   
-
+  //função para consultar o git
+  function consultarGit(e){
+    e.preventDefault()
+    console.log(seuGit)
+  }
 
   //função para mudar o git
   function mudarGit(e) {
@@ -24,7 +28,7 @@ export default function PesquisarGit() {
     <Container>
       <FaGithubAlt size={27} color='#FFFFFF'/>
       
-      <form onSubmit={ () => {} }>
+      <form onSubmit={consultarGit}>
         <input 
           type="text" 
           placeholder='Ex: cuscuzcumshark'
@@ -32,7 +36,9 @@ export default function PesquisarGit() {
           onChange={mudarGit}
         />
 
-        <button>
+        <button
+          type='submit'
+        >
           <FaSearch size={20} color="#FFFFFF"/>
         </button>
       </form>
