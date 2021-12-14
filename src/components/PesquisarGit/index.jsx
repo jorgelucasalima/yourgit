@@ -65,32 +65,43 @@ export default function PesquisarGit() {
         >
           <FaSearch size={20} color="#FFFFFF"/>
         </button>
-
-        <button
-          type='submit'
-        >
-          <FaSearch size={20} color="#FFFFFF"/>
-        </button>
-
       </form>
 
-
       {dadosGit.map(dado => (
-        <li>
-          <img src={dado.foto} alt="" />
-          <h3>Nome: {dado.nome}</h3>
-          <link rel="stylesheet" href={dado.linkgit} />
-          <p>Empresa: {dado.empresa}</p>
-          <p>Cidade: {dado.cidade}</p>
-          <p>Blog: {dado.link}</p>
-          <p>Bio: {dado.bio}</p>
-        </li>
         
+        <table>
+          <tr>
+            <td>Você: </td>
+            <td><img src={dado.foto} alt={dado.nome} /></td>
+          </tr>
+          <tr>
+            <td>Seu Nome: </td>
+            <td>{dado.nome}</td>
+          </tr>
+          <tr>
+            <td>Link Git: </td>
+            <td>{dado.linkgit}</td>
+          </tr>
+          <tr>
+            <td>Empresa: </td>
+            <td>{dado.empresa}</td>
+          </tr>
+          <tr>
+            <td>Cidade: </td>
+            <td>{dado.cidade}</td>
+          </tr>
+          <tr>
+            <td>Blog</td>
+            <td>{dado.link}</td>
+          </tr>
+          <tr>
+            <td>Bio: </td>
+            <td>{dado.bio}</td>
+          </tr>
+      </table>
+
+
       ))}
-
-
-      
-        
       
 
 
