@@ -1,22 +1,44 @@
 import { useState } from 'react'
 import api from '../../services/api'
+import Modal from 'react-modal'
 
 import {Container} from './styles'
-import { FaSearch, FaGithubAlt } from 'react-icons/fa'
+import { FaSearch, FaGithubAlt, FaWindowClose } from 'react-icons/fa'
 
 
 
 export default function PesquisarGit() {
 
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
 
   //XXXXXXXXXXXXXX STATES
 
   const [seuGit, setSeuGit] = useState('')
   const [dadosGit, setDadosGit] = useState([])
+
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   
 
   // XXXXXXXXXXXXX  FUNÇÕES
 
+  //função para abrir o modal
+  function modalAberto(params) {
+    setModalIsOpen(true)
+  }
+
+  //função para fechar o modal
+  function fecharModal (){
+    setModalIsOpen(false)
+  }
 
   //------ função para consultar o git - assincrona para esperar a resposta da api do github
   
@@ -40,12 +62,12 @@ export default function PesquisarGit() {
     setSeuGit('')
     
   }
-    
 
   //------ função para mudar o git
   function mudarGit(e) {
     setSeuGit(e.target.value)
   }
+
 
   return (
 
@@ -62,52 +84,55 @@ export default function PesquisarGit() {
 
         <button
           type='submit'
+          onClick={modalAberto}
         >
           <FaSearch size={20} color="#FFFFFF"/>
         </button>
-      </form>
 
-      {dadosGit.map(dado => (
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={modalAberto}
+          style={customStyles}
+        >
+       
+        <a onClick={fecharModal}><FaWindowClose size={20} /></a>
         
-        <table>
-          <tr>
-            <td>Você: </td>
-            <td><img src={dado.foto} alt={dado.nome} /></td>
-          </tr>
-          <tr>
-            <td>Seu Nome: </td>
-            <td>{dado.nome}</td>
-          </tr>
-          <tr>
-            <td>Link Git: </td>
-            <td>{dado.linkgit}</td>
-          </tr>
-          <tr>
-            <td>Empresa: </td>
-            <td>{dado.empresa}</td>
-          </tr>
-          <tr>
-            <td>Cidade: </td>
-            <td>{dado.cidade}</td>
-          </tr>
-          <tr>
-            <td>Blog</td>
-            <td>{dado.link}</td>
-          </tr>
-          <tr>
-            <td>Bio: </td>
-            <td>{dado.bio}</td>
-          </tr>
-      </table>
-
-
+        {dadosGit.map(dado => (
+          <table>
+            <tr>
+              <td></td>
+              <td><img src={dado.foto} alt={dado.nome} /></td>
+            </tr>
+            <tr>
+              <td>Seu Nome: </td>
+              <td>{dado.nome}</td>
+            </tr>
+            <tr>
+              <td>Link Git: </td>
+              <td>{dado.linkgit}</td>
+            </tr>
+            <tr>
+              <td>Empresa: </td>
+              <td>{dado.empresa}</td>
+            </tr>
+            <tr>
+              <td>Cidade: </td>
+              <td>{dado.cidade}</td>
+            </tr>
+            <tr>
+              <td>Blog</td>
+              <td>{dado.link}</td>
+            </tr>
+            <tr>
+              <td>Bio: </td>
+              <td>{dado.bio}</td>
+            </tr>
+        </table>
       ))}
+
+      </Modal>
+      </form>
       
-
-
     </Container>
-
-
-    
   )
 }
