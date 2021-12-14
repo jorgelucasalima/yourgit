@@ -8,6 +8,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
+  form {
+    display: flex;
+  }
+
   
   input {
     margin-left: 10px;
