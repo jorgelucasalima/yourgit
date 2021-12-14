@@ -38,6 +38,7 @@ export default function PesquisarGit() {
   //função para fechar o modal
   function fecharModal (){
     setModalIsOpen(false)
+    setDadosGit([]) // limpa o array
   }
 
   //------ função para consultar o git - assincrona para esperar a resposta da api do github

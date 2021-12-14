@@ -4,6 +4,7 @@ export const Container = styled.header`
   background: var(--cor-fundo-header);
   color: var(--cor-fonte);
   padding: 0 30px;
+  height: 90px;
 `
 
 export const Content = styled.div`
