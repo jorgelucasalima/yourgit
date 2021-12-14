@@ -77,7 +77,7 @@ export default function PesquisarGit() {
       <form onSubmit={consultarGitSubmit}>
         <input 
           type="text" 
-          placeholder='Ex: cuscuzcumshark'
+          placeholder='Digite seu GitHub | Ex: cuscuzcumshark'
           value={seuGit}
           onChange={mudarGit}
         />
