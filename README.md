@@ -9,7 +9,9 @@ Essa projeto foi desenvolvimento em ReactJs e tem como funcionalidade a busca de
 API GitHub utilizada (https://api.github.com/users/)
 
 
-![](C:\Users\Jorge\Desktop\Estudos Reactjs\YourGit\yourgit\public\YourGit print 1.png)
+<p align="center">
+  <img width="460" height="300" src="src/assets/YourGit.png" >
+</p>
 
 
 
