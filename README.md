@@ -10,7 +10,7 @@ API GitHub utilizada (https://api.github.com/users/)
 
 
 <p align="center">
-  <img width="800" height="1000" src="src/assets/YourGit.png" >
+  <img width="800" height="800" src="src/assets/YourGit.png" >
 </p>
 
 
